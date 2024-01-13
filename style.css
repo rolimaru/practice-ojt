@@ -30,7 +30,8 @@
   padding-top: 3rem;
   float: left;
   margin-right: 2rem;
-  /* z-index: -1; */
+  /* position: fixed; */
+  z-index: -1;
 }
 .logo {
   width: 150px;
@@ -89,6 +90,12 @@
   margin: 0 10px;
   box-sizing: border-box;
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 5px;
   margin-bottom: 10px;
+}
+.job-post:hover {
+  background-color: rgb(213, 241, 232);
+}
+.mini:hover {
+  background-color: rgb(213, 241, 232);
 }

@@ -60,7 +60,7 @@
 </div>
   <script>
       function loginModal(){
-        window.location.href = 'dashboard.php'
+        window.location.href = 'home.php'
       }
   </script>
 </body>

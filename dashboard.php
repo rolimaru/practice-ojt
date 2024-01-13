@@ -35,15 +35,18 @@
                     </span>
                 </div>
             </div>
-            <div class="col-md-4  shadow p-4 " style=" background-color:#f4f4f5 ; border-radius: 2%; border: solid .5px">
-                <div class="nav m-1 center text-info " style="height: 50px; width:100%;  ">
-                    <h2 >Employeer Info </h2>
+            <div class="col-md-4  shadow p-4 " style=" background-color:#f4f4f5 ; border-radius: 2%; border: solid .5px;position:relative;">
+                <div class="nav m-1 center text-info " style="height: 20px; width:100%;  ">
+                    <!-- <h2 >Employeer Info </h2> -->
+                    <h4>About</h4>
                 </div>
-                <div style="">
+                <div style=" ">
+                <hr>
                     <span class="d-flex d-inline mb-3">
                             <img src="pics/user.jpg" alt="No img found" style="width: 80px; height: 60px;border:solid 1px; border-radius:20%;">
                             <h3 class=" mt-3 ms-1">Rolimaru</h3>
                     </span>
+                    
                     <span class="d-flex d-inline mb-1">
                         <i class="fa-solid fa-location-dot fs-5 text-success ms-4"></i>
                         <p class="ms-4 ">Catarman, Cordova, Cebu</p>
@@ -52,15 +55,24 @@
                         <i class="fa-solid fa-at fs-5 text-muted ms-4"></i>
                         <p class="ms-4 ">arorolie9@gmail.com</p>
                     </span>
-                    <span class="btn btn-success" style="">Send Application</span>
+                    <span class="d-flex d-inline mb-1">
+                        <i class="fa-solid fa-building-user text-info ms-4"></i>
+                        <p class="ms-4 ">Company name.</p>
+                    </span>
+                     <hr>
+                    <span class="btn btn-success text-white" style="width: 200px; position:absolute; right:1rem; bottom:1rem;">Send Application</span>
                 </div>
             </div>
         </div>    
     </div>
 
     <div class="container " style=" width: auto; overflow-x: auto;" >
-        <div class="card-container mt-3" >
-                <div class="card mx-2 " style="width: 18rem; position:;">
+        <div class="rela">
+            <h5 class="bg-success text-white " style="border: solid black 1px; padding 1rem; z-index: 2; font-size: 20px; margin-top: 3px; width: 100px; text-align: center;display: sticky;  border-radius: 5px; " >Related</h5>
+        
+        </div>
+        <div class="card-container mt-1" >
+                <div class="mini card mx-2 " style="width: 18rem; position:;">
                     <div class="card-body shadow">
                         <h5 class="card-title ">Vendor</h5>
                         <hr>
@@ -68,8 +80,8 @@
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-                <div class="card mx-2 " style="width: 18rem; position:;">
-                    <div class="card-body">
+                <div class="mini card mx-2 " style="width: 18rem; position:;">
+                    <div class="card-body shadow">
                         <h5 class="card-title">Construction</h5>
                         <hr>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

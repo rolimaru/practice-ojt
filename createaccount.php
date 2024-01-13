@@ -14,12 +14,12 @@
 
     <div class="container">
         <div class="row " style="">
-            <div class="col-md-3 bg-dark text-light text-center" style=" margin-top : 5rem; padding: 2rem;">
+            <div class="col-md-3 bg-dark text-light text-center" style=" margin-top : 2rem; padding: 2rem;">
             <blockquote class="blockqoute mt-5"> <h2>
                 "To strive for professionalism, we often disconnect ourselves from the pressing issues in our society, losing sight of the struggles faced by the people we serve."</h2>
             </blockquote>
             </div>
-            <div class="col-md-5 bg-light shadow-lg " style="border-top-right-radius: 5%; border-bottom-right-radius: 5%;margin-top: 5rem; padding: 4rem;">
+            <div class="col-md-5 bg-light shadow-lg " style="border-top-right-radius: 5%; border-bottom-right-radius: 5%;margin-top: 2rem; padding: 4rem;">
                     <label for="fname" style="font-size: 20px;">First name:</label>
                     <input type="text" name="lname" placeholder="Last name.." class="form-control shadow-sm m-2">
 
