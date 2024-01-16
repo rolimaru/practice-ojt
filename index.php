@@ -8,14 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body style="background-image: url('pics/11.jpg'); background-size: cover;">
+<body style="background-image: url('pics/11.jpg'); background-size: cover; ">
 
     <div class="nav-bar">
         
     </div>
-    <div class="container">
+    <div class="container ">
         <div class="row ">
-            <div class="col-md-6 ">
+            <div class="col-md-6 mt-5">
                 <div>
                     <img src="pics/jobposting.png" alt="No Img found;" class="back-img"> </img>
                     <h2 class="front-header text-info ">
@@ -43,26 +43,59 @@
         <h1 class="modal-title fs-5 " id="exampleModalLabel">Log in account</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body m-4">
-        <!-- <label for="email" class="fs-lg">Email</label> -->
-        <input type="email" name="email" class="form-control shadow mb-3" placeholder="Email..">
-        <span class="d-flex d-inline ">
-          <input type="password" name="password" class="form-control shadow mb-3" placeholder="Password..">
-        </span>
-        <div onclick="loginModal()" class="btn btn-primary btn-lg form-control mb-3"> Log in</div>
-        <span class="text-primary" style="margin-left: 130px;"><a href="#">Forgot password?</a></span>
-
-      </div>
+      <form onsubmit="event.preventDefault(); fnlogine(event);" class="login-form">
+        <fieldset class="mb-2">
+            <legend>Administrator Login</legend>
+            <div class="input-group mb-3">
+                <span class="input-group-icon fas fa-user-cog"></span>
+                <input type="text" class="form-control" placeholder="Username" name="email">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-icon fas fa-key"></span>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <button class="btn btn-primary">Login</button>
+        </fieldset>
+        <a href="resetpassword.php" class="form-label"id="modal-recovery">Account Recovery</a>
+    </form>
       <!-- <div class="modal-footer">
       </div> -->
     </div>
   </div>
 </div>
-  <script>
-      function loginModal(){
-        window.location.href = 'home.php'
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+// //login admin
+function fnLogin(event){
+    let data = new FormData(event.target);
+    data.append("method","fnLogin");
+    axios.post("api/function.php",data)
+    .then(function(res){
+        if(res.data == 1){
+            window.location = "dashboard.php";
+        }else if(res.data == 2){
+            alert("username not exist");
+        }else{
+            alert("Log in Erroree");
+        }
+    })
+}
+// logine
+function fnlogine(event){
+    let data = new FormData(event.target);
+    data.append("method","fnlogine");
+    axios.post("api/function.php",data)
+    .then(function(res){
+      if(res.data == 1){
+          window.location = "dashboard.php"
+      }else if(res.data ==2){
+          alert("no email found");
+      }else{
+        alert("log in error");
       }
-  </script>
+    })
+}
+</script>
 </body>
   
 </html>
