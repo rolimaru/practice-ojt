@@ -70,7 +70,7 @@
     <div class="container " style=" width: auto; overflow-x: auto;" >
         <div class="rela">
             <h5 class="bg-success text-white " style="border: solid black 1px; padding 1rem; z-index: 2; font-size: 20px; margin-top: 3px; width: 100px; text-align: center;display: sticky;  border-radius: 5px; " >Related</h5>
-        
+    
         </div>
         <div class="card-container mt-1" >
                 <div class="mini card mx-2 " style="width: 18rem; position:;">
