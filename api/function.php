@@ -46,7 +46,6 @@ function fnLogin(){
         }
     }
 }
-
 function fnlogine(){
     global $conn;
     $email = $_POST['email'];
