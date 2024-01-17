@@ -69,6 +69,7 @@ function fnlogine(){
         }
     }
 }
+/// What the try to initalize more...........................
 function createAccount(){
     global $conn;
     $name = $_POST['name'];
