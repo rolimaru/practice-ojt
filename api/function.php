@@ -59,7 +59,7 @@ function fnlogine(){
         echo 2; // email not found
     }else{
         while($row = $result->fetch_array()){
-            if($password == $row['password']){
+            if(password_verify($password, $row['password'])){
                 $_SESSION = $row['name'];
                 $_SESSION = $row['email'];
                 $_SESSION = $row['username'];
@@ -70,5 +70,25 @@ function fnlogine(){
         }
     }
 }
+function createAccount(){
+    global $conn;
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+
+
+    $sql = "INSERT INTO `account`( `name`, `email`, `password`, `username`) VALUES ('$name', '$username','$hashedpassword','$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+
+}
+
 
 ?>

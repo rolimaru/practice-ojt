@@ -36,16 +36,14 @@
     </div>
     
 <!-- Modal -->
-<div class="modal fade shadow" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade shadow p5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-success">
         <h1 class="modal-title fs-5 " id="exampleModalLabel">Log in account</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form onsubmit="event.preventDefault(); fnlogine(event);" class="login-form">
-        <fieldset class="mb-2">
-            <legend>Administrator Login</legend>
+      <form onsubmit="event.preventDefault(); fnlogine(event);" class="login-form" style="padding : 10px; text-align: center;">
             <div class="input-group mb-3">
                 <span class="input-group-icon fas fa-user-cog"></span>
                 <input type="text" class="form-control" placeholder="Username" name="email">
@@ -54,9 +52,8 @@
                 <span class="input-group-icon fas fa-key"></span>
                 <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
-            <button class="btn btn-primary">Login</button>
-        </fieldset>
-        <a href="resetpassword.php" class="form-label"id="modal-recovery">Account Recovery</a>
+            <button class="btn btn-primary form-control shadow-sm mb-3">Login</button>
+        <a href="resetpassword.php" class="form-label "id="modal-recovery" style="text-align: center; text-decoration: none;">Account Recovery</a>
     </form>
       <!-- <div class="modal-footer">
       </div> -->
