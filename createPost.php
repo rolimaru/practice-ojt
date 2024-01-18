@@ -2,6 +2,7 @@
 
 <div class="main " style=" padding-top: 2rem; margin-bottom: 3rem;" >
     <div class="container  w-100 ms-5 " style="">
+    <form action="" onsubmit="event.preventDefault(); fnpost(event);">
         <div class="row " style="height: 400px; margin-top: 3rem; ">
             <div class="col-md-7 shadow" style="background-color: #d9dcde; border-style:solid; border-color: #828c92 ; border-radius: 5%; display: flex; border-width:3px; padding: 1.5rem; display: sticky; margin-right: .5rem;" >
                 <div class="row" >
@@ -12,12 +13,12 @@
                         <div>
                             <span class="d-flex d-inline mb-2">
                                 <p class="text-muted me-4">Job Title: </p>
-                                <h3 class=" "> <input type="text" class="form-control"style="border:none;   height: 50px; width: 300px;"></h3>
+                                <h3 class=" "> <input type="text" name="job_title" class="form-control"style="border:none;   height: 50px; width: 300px;"></h3>
                             </span>
                             <span class="d-flex d-inline mb-3">
                                 <p class="text-muted me-5 mb-3">Salary:</p>
                                 <h3 class="me-2"><i class="fa-solid fa-peso-sign"></i></h3>
-                                <input type="text" class="form-control me-1" style="border:none;   height: 50px; width: 180px;">
+                                <input type="text" name="salary" class="form-control me-1" style="border:none;   height: 50px; width: 180px;">
                                 <select name="rate" id="" style="border:none; font-size: 10px;">
                                     <option value="daily" style="">choose rate</option>
                                     <option value="daily" style="">daily.</option>
@@ -27,22 +28,24 @@
                             </span>
                             <span class="d-flex d-inline mb-3">
                                 <p class="text-muted me-4">Address: </p>
-                                <h3 class=" "><input type="text" class="form-control"style="border:none;   height: 40px; width: 300px;"></h3>
+                                <h3 class=" "><input type="text" name="address" class="form-control"style="border:none;   height: 40px; width: 300px;"></h3>
                             </span>
                             
                         </div>
                     </div>
                     <span class="d-flex d-inline">
-                                <p class="text-muted me-2">Personel needed </p>
-                                <h3 class=" "><input type="number" class="form-control"style="border:none;   height: 40px; width: 80px;"></h3>
-                            </span>
+                        <p class="text-muted me-2">Personel needed </p>
+                        <input type="number" name="personel" class="form-control"style="border:none;   height: 40px; width: 80px; margin-right: 5px;">
+                        <p class="text-muted me-2">Company</p>
+                        <input type="text" name="company" class="form-control"placeholder="Enter company name." style="border:none;   height: 40px; width: 300px; margin-right: 5px;">
+                    </span>
                     <span>
                         <p class="text-muted">Qualifications</p>
-                        <h6 class=""><input type="text" class="form-control"style="border:none;   height: 40px; width: 600px;"></h6>
+                        <h6 class=""><input type="text" name="qualification" class="form-control"style="border:none;   height: 40px; width: 600px;"></h6>
                     </span>
                     <span>
                         <p class="text-muted">Full Description:</p>
-                        <h6 class=""><input type="text" class="form-control"style="border:none;   height: 40px; width: 600px;"></h6>
+                        <h6 class=""><input type="text" name="full_description" class="form-control"style="border:none;   height: 40px; width: 600px;"></h6>
                     </span>
                 </div>
             </div>
@@ -66,11 +69,9 @@
                         <i class="fa-solid fa-at fs-5 text-muted ms-4"></i>
                         <p class="ms-4 ">arorolie9@gmail.com</p>
                     </span>
-                    <span class="d-flex d-inline mb-1">
-                        <input type="text" class="form-control mb-3" placeholder="Add Company name.">
-                    </span>
+                    
                      <hr>
-                    <span class="btn btn-secondary text-white" style="width: 200px; position:absolute; right:1rem; bottom:1rem;">Post</span>
+                    
                 </div>
             </div>
         </div>    
@@ -87,7 +88,9 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-secondary text-white" style="width: 200px; position:absolute; right:1rem; bottom:1rem;">Post</button>
 
+    </form>
     <!-- <div class="container " style=" width: auto; overflow-x: auto;" >
         <div class="rela">
             <h5 class="bg-success text-white " style="border: solid black 1px; padding: 5px;  position: static; z-index: 2; font-size: 20px; margin-top: 3px; max-width:150px; text-align: center; border-radius: 5px; " >Post created</h5>
@@ -138,3 +141,15 @@
             </div>
     </div> -->
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    function fnpost(event){
+        let data = new FormData(event.target);
+        data.append("method","fnpost");
+        axios.post("api/function.php", data).then(function(res){
+            alert("Saved to the db");
+            location.href ="home.php"
+        })
+    }
+
+</script>

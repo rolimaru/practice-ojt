@@ -1,13 +1,5 @@
 <?php
-
-    $conn = mysqli_connect("localhost","root","","jp-website");
-
-    if(!$conn){
-        echo "oops";
-    }
-    else{
-        // echo "connected";
-    }
+    include "db_conn.php";
     
         
     if (isset($_POST['method'])) {
@@ -88,6 +80,21 @@ function createAccount(){
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
 
+}
+function fnpost(){
+    global $conn;
+    $job_title = $_POST['job_title'];
+    $salary = $_POST['salary'];
+    $rate = $_POST['rate'];
+    $address = $_POST['address'];
+    $personel = $_POST['personel'];
+    $company = $_POST['company'];
+    $qualification = $_POST['qualification'];
+    $full_description = $_POST['full_description'];
+
+    $sql ="INSERT INTO `posts`(`job_title`, `salary`, `rate`, `address`, `personel`, `company`, `qualification`, `full_description`) VALUES ('$job_title', '$salary', '$rate', '$address', '$personel', '$company', '$qualification', '$full_description')";
+
+    $result = $conn->query($sql);
 }
 
 
