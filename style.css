@@ -10,7 +10,7 @@
   height: 60px;
   font-size: 20px;
   text-align: right;
-  position: fixed;
+  /* position: fixed; */
 }
 .nav-bar li {
   list-style: none;
@@ -24,10 +24,11 @@
 }
 .sidebar {
   width: 200px;
-  height: 750px;
-  margin-top: 2rem;
+  height: calcu(100vh - 60px);
+  /* height: 750px; */
+  /* margin-top: 2rem; */
   background-color: rgb(195, 201, 206);
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
   float: left;
   margin-right: 2rem;
   /* position: fixed; */

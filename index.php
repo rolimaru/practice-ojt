@@ -1,5 +1,11 @@
+
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
+    
+<script type="text/javascript">
+    window.history.forward();
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +90,7 @@ function fnlogine(event){
     axios.post("api/function.php",data)
     .then(function(res){
       if(res.data == 1){
-          window.location = "dashboard.php"
+          window.location = "home.php"
       }else if(res.data ==2){
           alert("no email found");
       }else{

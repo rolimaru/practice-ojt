@@ -1,6 +1,7 @@
 <?php
-    include "db_conn.php";
-    
+
+    include "../db_conn.php";
+    session_start();
         
     if (isset($_POST['method'])) {
         $method = $_POST['method'];
@@ -51,9 +52,9 @@ function fnlogine(){
     }else{
         while($row = $result->fetch_array()){
             if(password_verify($password, $row['password'])){
-                $_SESSION = $row['name'];
-                $_SESSION = $row['email'];
-                $_SESSION = $row['username'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['username'] = $row['username'];
                 echo 1;
             }else{
                 echo 0;
@@ -96,6 +97,12 @@ function fnpost(){
 
     $result = $conn->query($sql);
 }
-
+function fnlogOut(){
+    session_destroy();
+    session_unset();
+     
+    echo 1;
+    exit();
+}
 
 ?>

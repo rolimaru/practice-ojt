@@ -16,9 +16,9 @@
 
 ?>
 
-<div class="main " style=" padding-top: 2rem; " >
+<div class="main " style=" height: calcu(100vh - 60px); margin-top: 5px;  " >
     <div class="container  w-100 ms-5 " style="">
-        <div class="row " style="height: 400px; margin-top: 3rem; ">
+        <div class="row " style="height: 400px; ">
             <div class="col-md-7 shadow" style="background-color: #d9dcde; border-style:solid; border-color: #828c92 ; border-radius: 5%; display: flex; border-width:3px; padding: 1.5rem; display: sticky; margin-right: .5rem;" >
                 <div class="row" >
                     <div class="col-md-4">
